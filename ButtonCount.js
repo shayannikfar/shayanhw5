@@ -1,18 +1,17 @@
 class ButtonCount extends HTMLElement {
-        
-    constructor() {
+    constructor(){
         super();
-        let newbutton = document.createElement('button');
-        newbutton.innerHTML = "Times Clicked : ";
-        let count = document.createElement('output');
-        count.textContent = 0;
-        newbutton.append(count);
-        newbutton.addEventListener('click', () => {
-            let currVal = Number(count.textContent);
-            count.textContent = currVal + 1;
+        let but = document.createElement(`button`);
+        but.innerHTML = "Times Clicked: ";
+        let counter = document.createElement(`output`);
+        counter.textContent = 0;
+        but.append(counter);
+        but.addEventListener("click", ()=>{
+            let currentNum = Number(counter.textContent);
+            counter.textContent = currentNum + 1;
         });
-        this.attachShadow({ mode:"open" });
-        this.shadowRoot.append(newbutton);
+        this.attachShadow({mode:"open"});
+        this.shadowRoot.append(but);
     }
 }
 customElements.define("button-count", ButtonCount);
