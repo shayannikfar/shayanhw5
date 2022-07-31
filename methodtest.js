@@ -12,8 +12,9 @@ function init(){
 export function Getfunction(){
     console.log(`get function started`);
     const xhr = new XMLHttpRequest(); 
+    let resp = document.getElementById("response");
     xhr.onload = function(){
-        document.getElementById("response").innerHTML = JSON.stringify(JSON.parse(xhr.responseText), null, 4);
+        resp.innerHTML = JSON.stringify(JSON.parse(xhr.responseText), null, 4);
     }
     xhr.open(`GET`, `https://httpbin.org/get`);
     xhr.send(new FormData(document.getElementById("act")));
@@ -23,8 +24,9 @@ export function Getfunction(){
 export function Postfunction(){
     console.log(`post function started`);
     const xhr = new XMLHttpRequest(); 
+    let resp = document.getElementById("response");
     xhr.onload = function(){
-        document.getElementById("response").innerHTML = JSON.stringify(JSON.parse(xhr.responseText), null, 4);
+        resp.innerHTML = JSON.stringify(JSON.parse(xhr.responseText), null, 4);
     }
     xhr.open(`POST`, `https://httpbin.org/post`);
     xhr.send(new FormData(document.getElementById("act")));
@@ -35,8 +37,9 @@ export function Postfunction(){
 export function Putfunction(){
     console.log(`put function started`);
     const xhr = new XMLHttpRequest(); 
+    let resp = document.getElementById("response");
     xhr.onload = function(){
-        document.getElementById("response").innerHTML = JSON.stringify(JSON.parse(xhr.responseText), null, 4);
+        resp.innerHTML = JSON.stringify(JSON.parse(xhr.responseText), null, 4);
     }
     xhr.open(`PUT`, `https://httpbin.org/put`);
     xhr.send(new FormData(document.getElementById("act")));
@@ -44,8 +47,9 @@ export function Putfunction(){
 export function Deletefunction(){
     console.log(`delete function started`);
     const xhr = new XMLHttpRequest(); 
+    let resp = document.getElementById("response");
     xhr.onload = function(){
-        document.getElementById("response").innerHTML = JSON.stringify(JSON.parse(xhr.responseText), null, 4);
+       resp.innerHTML = JSON.stringify(JSON.parse(xhr.responseText), null, 4);
     }
     xhr.open(`DELETE`, `https://httpbin.org/delete`);
     xhr.send(new FormData(document.getElementById("act")));
